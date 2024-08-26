@@ -1,5 +1,7 @@
 from typing import Dict, List, Any
-from transformers import AutoTokenizer, AutoModelForCausalLM
+from transformers import AutoTokenizer
+from peft import PeftModel, PeftConfig
+from transformers import AutoModelForCausalLM, BitsAndBytesConfig
 
 
 alpaca_prompt = """Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
@@ -17,9 +19,9 @@ alpaca_prompt = """Below is an instruction that describes a task, paired with an
 class EndpointHandler:
     def __init__(self, path=""):
         # load model and processor from path
-        self.model = AutoModelForCausalLM.from_pretrained(path, device_map="auto")
-        self.tokenizer = AutoTokenizer.from_pretrained(path)
 
+        self.model = AutoModelForCausalLM.from_pretrained(path, load_in_4bit=True)
+        self.tokenizer = AutoTokenizer.from_pretrained(path)
         with open(f"{path}/zero_shot_cot_prompt.txt", 'r') as file:
             self.instruction_prompt = file.read()
 
