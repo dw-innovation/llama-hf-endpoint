@@ -1,3 +1,6 @@
+## HF Endpoints
+This repository contains examples of handlers, requirements.txt to host a customized Llama.
+
 ## Installation
 Create a conda environment if you don't have one.
 ```shell
