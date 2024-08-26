@@ -1,6 +1,5 @@
 from typing import Dict, List, Any
 from transformers import AutoTokenizer
-from peft import PeftModel, PeftConfig
 from transformers import AutoModelForCausalLM, BitsAndBytesConfig
 
 
