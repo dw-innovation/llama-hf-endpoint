@@ -10,7 +10,7 @@ Please provide the output as the following YAML format and don't provide any exp
 
 area:
  - type: [area type]
-   value: [area name]
+   name: [area name]
 entities:
  - name: [entity name 1]
    id: [entity id 1]
