@@ -4,10 +4,10 @@ from handler import EndpointHandler
 my_handler = EndpointHandler(path=".")
 
 # prepare sample payload
-non_holiday_payload = {"inputs": "Find all book stores of brand thalia"}
+test_payload = {"inputs": "Find all book stores of brand thalia"}
 
 # test the handler
-non_holiday_pred = my_handler(non_holiday_payload)
+response = my_handler(test_payload)
 
 # show results
-print(non_holiday_pred)
+print(response)
